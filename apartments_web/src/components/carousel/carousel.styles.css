@@ -1,0 +1,8 @@
+.carousel img {
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .carousel img.hidden {
+    opacity: 0;
+  }
+  
