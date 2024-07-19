@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import { listApartmentRouter } from "./routes/list-apartment.router.mjs";
+import { apartmentsRouter } from "./routes/apartments.router.mjs";
 dotenv.config();
 
 const MongoDB_Connection_String= process.env.MONGODB_URL ?? "";
@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors())
 
-app.use('/apartments-list', listApartmentRouter);
+app.use('/apartments', apartmentsRouter);
 
 app.get('/', (req, res) => {
     res.send('well done!');
