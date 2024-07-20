@@ -1,7 +1,7 @@
 # React Native Frontend Dockerfile
 
 # Use an official Node runtime as a parent image
-FROM node:14
+FROM node:22
 
 # Set the working directory
 WORKDIR /app
@@ -19,7 +19,7 @@ COPY . .
 RUN npm run build
 
 # Expose port (usually 3000 for React apps)
-EXPOSE 3000
+EXPOSE 8080
 
 # Start the application
 CMD ["npm", "start"]
