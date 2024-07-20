@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY package.json .
 
-RUN npm install
+COPY package-lock.json ./
 
 COPY . .
 
 EXPOSE 9000
 
-CMD ["npm", "run", "start"]
+CMD [ -d "node_modules" ] && npm run start || npm ci && npm run start

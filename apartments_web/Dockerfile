@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD [ -d "node_modules" ] && npm run build ||  npm ci && npm run build && npm run start || npm ci && npm run start
